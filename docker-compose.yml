@@ -1,0 +1,11 @@
+version: '3'
+services:
+  log-forwarder:
+    image: your-dockerhub-username/log-forwarder:latest
+    container_name: log-forwarder
+    volumes:
+      - /var/log:/host/logs  
+    environment:
+      - LOG_SERVER_IP=${LOG_SERVER_IP} 
+    ports:
+      - "5000:5000"  
